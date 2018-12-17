@@ -31,10 +31,8 @@
     }
 
     $query = $db->prepare("
-        SELECT * FROM user
-        WHERE user_id IN(
-        SELECT user_id FROM user_games 
-        WHERE user_id != '".$uid."' AND game_id IN (
+        SELECT * FROM user WHERE user_id IN(
+        SELECT user_id FROM user_games WHERE user_id != '".$uid."' AND game_id IN (
         SELECT game_id FROM user_games WHERE user_id = '".$uid."'))"
     );
     $query->execute();
@@ -255,13 +253,18 @@
                                             <div>
                                                 <h4><?php echo $username; ?></h4>
                                                 <?php
-                                                $query = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
-                                                    SELECT game_id FROM user_games WHERE game_id IN
-                                                    (SELECT game_id from )");
-                                                $query->execute();
+                                                $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."'))");
+                                                $gamequery->execute();
                                                 ?>
                                                 
-                                                <p>Plays: </p>
+                                                <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
+                                                                    $sharedgame = $fetch['game_name'];
+                                                                    echo $sharedgame;
+                                                                }
+                                                            ?>
+                                                </p>
                                                 <div class="actions">
                                                     <?php
                                                     if($id != $uid){
@@ -336,6 +339,19 @@
                                             ?>
                                             <div>
                                                 <h4><?php echo $username; ?></h4>
+                                                <?php
+                                                $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."')");
+                                                $gamequery->execute();
+                                                ?>
+                                                
+                                                <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
+                                                                    $sharedgame = $fetch['game_name'];
+                                                                    echo $sharedgame;
+                                                                }
+                                                            ?>
+                                                </p>
                                                 <div class="actions">
                                                     <?php
                                                     if($id != $uid){
@@ -384,6 +400,19 @@
                                             ?>
                                             <div>
                                                 <h4><?php echo $username; ?></h4>
+                                                <?php
+                                                $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."')");
+                                                $gamequery->execute();
+                                                ?>
+                                                
+                                                <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
+                                                                    $sharedgame = $fetch['game_name'];
+                                                                    echo $sharedgame;
+                                                                }
+                                                            ?>
+                                                </p>
                                                 <div class="actions">
                                                     <?php
                                                     if($id != $uid){
@@ -505,24 +534,19 @@
                             </div>
                         </div>
                     </div>
-                    
+                     
                 </div>
                 
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="frequestform">
-                    <div class="fixed-bottom">
-                        <div class="frequestflow">
-                            
-                        </div>    
-                    </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="fixed-bottom">
+                            <div class="friendrequests">
+                                    
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-                
         </div>
-        
-            
         
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

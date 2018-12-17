@@ -136,14 +136,9 @@
     width:100%;
     background-color:#e5eced;
 }
-.frequestform{
-    margin-left:20px;
-}
 
-.frequestflow{
-    float:left;
-    height:128px;
-    width:300px;
-    background-color:white;
-    bottom:20px;
+.friendrequests{
+    height:300px;
+    width:200px;
+    background-color:#034452;
 }
