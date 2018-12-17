@@ -1,0 +1,149 @@
+.searchbar{
+    background-color:#e5eced;
+}
+
+.profimgbox{
+   /* position:absolute; */
+    height: 128px;
+    width: 128px;
+    background-color:#034452;
+    margin-left:25px;
+    margin-top: 20px;
+}
+
+.recommendusers{
+    position:relative;
+    width:750px;
+    margin-top: 20px;
+    height:100%;
+    background-color:#e5eced;
+    float:left;
+    box-shadow:3px 3px 10px grey;
+}
+
+.recommendheader{
+    position:absolute;
+    height: 80px;
+    width:750px;
+    background-color:#ffffff;
+    border-style:solid;
+    border-color:#034452;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    line-height:75px;
+    font-family:arial;
+    font-size:20px;
+}
+.recommendbody{
+    position:absolute;
+    height:400px;
+    margin-top:80px;
+    width:750px;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+    overflow-y:scroll;
+}
+.scrollmenu{
+    top:0;
+    position:relative;
+    margin:10px;
+    overflow:hidden;
+}
+
+.profbuttonbody{
+    float:right;
+    margin-top:20px;
+    margin-right: 20px;
+}
+
+.profbutton{
+    font-family:arial;
+    font-size:20px;
+    text-align:center;
+    height: 100px;
+    width: 100px;
+    background-color:#034452;
+    border-radius: 50%;
+    margin-bottom:20px;
+}
+
+.form{
+    text-align:center;
+}
+
+.formbackground{
+    padding-top:30px;
+    background-color:#034452;
+    padding-bottom:50px;
+    border-radius:30px;
+}
+
+/*
+.tagcolour{
+    color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+}
+*/
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}
+
+.backgroundimg{
+    background-color:#e5eced;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size:cover;
+}
+
+.headtop{
+    float:left;
+}
+
+.logoplace{
+    padding-left:30px;
+    padding-top:30px;
+    
+    height:auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.form2{
+    float:right;
+}
+
+.footer{
+    height:50px;
+    width:100%;
+    background-color:#e5eced;
+}
+.frequestform{
+    margin-left:20px;
+}
+
+.frequestflow{
+    float:left;
+    height:128px;
+    width:300px;
+    background-color:white;
+    bottom:20px;
+}

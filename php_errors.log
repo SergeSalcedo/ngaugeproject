@@ -1,0 +1,128 @@
+[13-Dec-2018 13:10:25 UTC] PHP Warning:  include(db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:25 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:10:25 UTC] PHP Warning:  include(): Failed opening 'db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:25 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:25 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:10:37 UTC] PHP Warning:  include(db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:37 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:10:37 UTC] PHP Warning:  include(): Failed opening 'db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:37 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:10:51 UTC] PHP Warning:  include(db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:51 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:10:51 UTC] PHP Warning:  include(): Failed opening 'db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/HomePage/homepage.php on line 1
+[13-Dec-2018 13:10:51 UTC] PHP Stack trace:
+[13-Dec-2018 13:10:51 UTC] PHP   1. {main}() /home/ubuntu/workspace/HomePage/homepage.php:0
+[13-Dec-2018 13:42:06 UTC] PHP Warning:  include(db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:42:06 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:06 UTC] PHP Warning:  include(): Failed opening 'db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:42:06 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:06 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[13-Dec-2018 13:42:06 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:06 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[13-Dec-2018 13:42:53 UTC] PHP Warning:  include(\db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:42:53 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:53 UTC] PHP Warning:  include(): Failed opening '\db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:42:53 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:53 UTC] PHP Warning:  mysql_fetch_assoc() expects at least 1 parameter, 0 given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 22
+[13-Dec-2018 13:42:53 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:53 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:22
+[13-Dec-2018 13:42:53 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[13-Dec-2018 13:42:53 UTC] PHP Stack trace:
+[13-Dec-2018 13:42:53 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:42:53 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[13-Dec-2018 13:43:46 UTC] PHP Warning:  include(\db_connector.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:43:46 UTC] PHP Stack trace:
+[13-Dec-2018 13:43:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:43:46 UTC] PHP Warning:  include(): Failed opening '\db_connector.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 11
+[13-Dec-2018 13:43:46 UTC] PHP Stack trace:
+[13-Dec-2018 13:43:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:43:46 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[13-Dec-2018 13:43:46 UTC] PHP Stack trace:
+[13-Dec-2018 13:43:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:43:46 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[13-Dec-2018 13:43:58 UTC] PHP Warning:  mysql_fetch_assoc() expects at least 1 parameter, 0 given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 22
+[13-Dec-2018 13:43:58 UTC] PHP Stack trace:
+[13-Dec-2018 13:43:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:43:58 UTC] PHP   2. mysql_fetch_assoc() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:22
+[13-Dec-2018 13:43:58 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, string given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[13-Dec-2018 13:43:58 UTC] PHP Stack trace:
+[13-Dec-2018 13:43:58 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:43:58 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[13-Dec-2018 13:44:21 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[13-Dec-2018 13:44:21 UTC] PHP Stack trace:
+[13-Dec-2018 13:44:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[13-Dec-2018 13:44:21 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[14-Dec-2018 03:16:41 UTC] PHP Warning:  require(Classes/games.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 17
+[14-Dec-2018 03:16:41 UTC] PHP Stack trace:
+[14-Dec-2018 03:16:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:16:41 UTC] PHP Fatal error:  require(): Failed opening required 'Classes/games.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 17
+[14-Dec-2018 03:16:41 UTC] PHP Stack trace:
+[14-Dec-2018 03:16:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:17:27 UTC] PHP Warning:  require(Classes/addgames.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 17
+[14-Dec-2018 03:17:27 UTC] PHP Stack trace:
+[14-Dec-2018 03:17:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:17:27 UTC] PHP Fatal error:  require(): Failed opening required 'Classes/addgames.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 17
+[14-Dec-2018 03:17:27 UTC] PHP Stack trace:
+[14-Dec-2018 03:17:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:17:52 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC), expecting :: (T_PAAMAYIM_NEKUDOTAYIM) in /home/ubuntu/workspace/JoshTestStuff/Classes/addgames.php on line 65
+[14-Dec-2018 03:17:52 UTC] PHP Stack trace:
+[14-Dec-2018 03:17:52 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:18:39 UTC] PHP Fatal error:  Call to undefined method Friends::renderFriendShip() in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 30
+[14-Dec-2018 03:18:39 UTC] PHP Stack trace:
+[14-Dec-2018 03:18:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:19:59 UTC] PHP Fatal error:  Class 'addgames' not found in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 30
+[14-Dec-2018 03:19:59 UTC] PHP Stack trace:
+[14-Dec-2018 03:19:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:20:42 UTC] PHP Fatal error:  Class 'addgames' not found in /home/ubuntu/workspace/JoshTestStuff/gametest.php on line 30
+[14-Dec-2018 03:20:42 UTC] PHP Stack trace:
+[14-Dec-2018 03:20:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/gametest.php:0
+[14-Dec-2018 03:31:05 UTC] PHP Fatal error:  Class 'addgames' not found in /home/ubuntu/workspace/JoshTestStuff/parsegames.php on line 13
+[14-Dec-2018 03:31:05 UTC] PHP Stack trace:
+[14-Dec-2018 03:31:05 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:0
+[14-Dec-2018 03:32:02 UTC] PHP Fatal error:  Call to undefined method addgames::add() in /home/ubuntu/workspace/JoshTestStuff/parsegames.php on line 14
+[14-Dec-2018 03:32:02 UTC] PHP Stack trace:
+[14-Dec-2018 03:32:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:0
+[14-Dec-2018 04:24:19 UTC] PHP Fatal error:  Class 'friends' not found in /home/ubuntu/workspace/JoshTestStuff/Classes/addgames.php on line 75
+[14-Dec-2018 04:24:19 UTC] PHP Stack trace:
+[14-Dec-2018 04:24:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:0
+[14-Dec-2018 04:24:19 UTC] PHP   2. addgames::remove() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:18
+[14-Dec-2018 04:25:33 UTC] PHP Fatal error:  Call to undefined method addgames::renderFriendShip() in /home/ubuntu/workspace/JoshTestStuff/Classes/addgames.php on line 76
+[14-Dec-2018 04:25:33 UTC] PHP Stack trace:
+[14-Dec-2018 04:25:33 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:0
+[14-Dec-2018 04:25:33 UTC] PHP   2. addgames::remove() /home/ubuntu/workspace/JoshTestStuff/parsegames.php:18
+[14-Dec-2018 07:07:20 UTC] PHP Parse error:  syntax error, unexpected '$db' (T_VARIABLE) in /home/ubuntu/workspace/JoshTestStuff/recommendation.php on line 7
+[14-Dec-2018 07:07:41 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ubuntu/workspace/JoshTestStuff/recommendation.php on line 39
+[14-Dec-2018 07:07:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/JoshTestStuff/recommendation.php on line 44
+[14-Dec-2018 12:20:31 UTC] PHP Warning:  mysqli_stmt_init() expects parameter 1 to be mysqli, object given in /home/ubuntu/workspace/JoshTestStuff/db_connector.php on line 79
+[14-Dec-2018 12:20:32 UTC] PHP Stack trace:
+[14-Dec-2018 12:20:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/login.php:0
+[14-Dec-2018 12:20:32 UTC] PHP   2. include() /home/ubuntu/workspace/JoshTestStuff/login.php:1
+[14-Dec-2018 12:20:32 UTC] PHP   3. mysqli_stmt_init() /home/ubuntu/workspace/JoshTestStuff/db_connector.php:79
+[14-Dec-2018 12:20:32 UTC] PHP Warning:  mysqli_stmt_prepare() expects parameter 1 to be mysqli_stmt, null given in /home/ubuntu/workspace/JoshTestStuff/db_connector.php on line 80
+[14-Dec-2018 12:20:32 UTC] PHP Stack trace:
+[14-Dec-2018 12:20:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/login.php:0
+[14-Dec-2018 12:20:32 UTC] PHP   2. include() /home/ubuntu/workspace/JoshTestStuff/login.php:1
+[14-Dec-2018 12:20:32 UTC] PHP   3. mysqli_stmt_prepare() /home/ubuntu/workspace/JoshTestStuff/db_connector.php:80
+[14-Dec-2018 12:39:44 UTC] PHP Catchable fatal error:  Object of class mysqli_result could not be converted to string in /home/ubuntu/workspace/JoshTestStuff/index.php on line 45
+[14-Dec-2018 12:39:44 UTC] PHP Stack trace:
+[14-Dec-2018 12:39:44 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/index.php:0
+[15-Dec-2018 15:43:23 UTC] PHP Warning:  mysqli_stmt_init() expects parameter 1 to be mysqli, object given in /home/ubuntu/workspace/JoshTestStuff/db_connector.php on line 79
+[15-Dec-2018 15:43:23 UTC] PHP Stack trace:
+[15-Dec-2018 15:43:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/login.php:0
+[15-Dec-2018 15:43:23 UTC] PHP   2. include() /home/ubuntu/workspace/JoshTestStuff/login.php:1
+[15-Dec-2018 15:43:23 UTC] PHP   3. mysqli_stmt_init() /home/ubuntu/workspace/JoshTestStuff/db_connector.php:79
+[15-Dec-2018 15:43:23 UTC] PHP Warning:  mysqli_stmt_prepare() expects parameter 1 to be mysqli_stmt, null given in /home/ubuntu/workspace/JoshTestStuff/db_connector.php on line 80
+[15-Dec-2018 15:43:23 UTC] PHP Stack trace:
+[15-Dec-2018 15:43:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/login.php:0
+[15-Dec-2018 15:43:23 UTC] PHP   2. include() /home/ubuntu/workspace/JoshTestStuff/login.php:1
+[15-Dec-2018 15:43:23 UTC] PHP   3. mysqli_stmt_prepare() /home/ubuntu/workspace/JoshTestStuff/db_connector.php:80
