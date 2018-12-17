@@ -6,7 +6,6 @@
    /* position:absolute; */
     height: 128px;
     width: 128px;
-    background-color:#034452;
     margin-left:25px;
     margin-top: 20px;
 }
@@ -17,7 +16,6 @@
     width:750px;
     margin-top: 20px;
     height:100%;
-    background-color:#e5eced;
     float:left;
     box-shadow:3px 3px 10px grey;
 }
@@ -139,6 +137,9 @@
 }
 
 .friendrequests{
+    margin-top:20px;
+    margin-left:25px;
+    float:right;
     position:relative;
     height:450px;
     width:350px;
@@ -147,7 +148,7 @@
 
 .friendheader{
     position:absolute;
-    height: 80px;
+    height: 60px;
     width:350px;
     background-color:#ffffff;
     border-style:solid;
@@ -155,7 +156,7 @@
     float:left;
     text-align:center;
     vertical-align:middle;
-    line-height:75px;
+    line-height:55px;
     font-family:arial;
     font-size:20px;
 }
@@ -164,10 +165,9 @@
     position:absolute;
     max-height:500px;
     margin-top:80px;
-    width:750px;
+    max-width:750px;
     background-color:#e5eced;
-    box-shadow:3px 3px 10px grey;
-    overflow-y:scroll;
+    /*box-shadow:3px 3px 10px grey;*/
 }
 
 .gamesbox{
@@ -180,7 +180,7 @@
 
 .gamesheader{
     position:absolute;
-    height: 80px;
+    height: 60px;
     width:350px;
     background-color:#ffffff;
     border-style:solid;
@@ -188,17 +188,40 @@
     float:left;
     text-align:center;
     vertical-align:middle;
-    line-height:75px;
+    line-height:55px;
     font-family:arial;
     font-size:20px;
+}
+.gamesearch{
+    margin-top:60px;
+    position:absolute;
+    height:45px;
+    width:350px;
+    float:left;
+    text-align:center;
+    line-height:35px;
+    font-family:arial;
+    font-size:20px;
+    font-size: 13px;
+    display: block;
 }
 
 .gamesbody{
     position:absolute;
-    max-height:500px;
+    max-height:64px;
     margin-top:80px;
     width:350px;
     background-color:#e5eced;
     box-shadow:3px 3px 10px grey;
     overflow-y:scroll;
+}
+
+.formsize{
+  display: flex;
+  align-items: center;
+}
+
+.gamesearch .submitsize{
+    width: auto;
+    height: auto;
 }

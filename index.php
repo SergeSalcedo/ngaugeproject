@@ -187,11 +187,44 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class="profimgbox">
-                        
+                            <img src="NG.png" alt="NGauge Logo" class="img-thumbnail">
                         </div>
+                        <div class="friendrequests">
+                                <div class="friendheader">
+                                    Friend Requests
+                                </div>
+                                <div class="friendbody">
+                                    <?php 
+                                        $request = $db->prepare("SELECT * FROM friends WHERE user1 = '".$uid."' AND friendship_official='0'");
+                                        $request->execute();
+                                
+                                        if($request->rowCount() > 0){
+                                            while($fetch = $request->fetch(PDO::FETCH_ASSOC)){
+                                            $user2 = $fetch['user2'];
+                                        
+                                            $user = $db->prepare("SELECT * FROM user WHERE user_id = '".$user2."'");
+                                            $user->execute();
+                    
+                                            $fetch_user = $user->fetch(PDO::FETCH_ASSOC);
+                                            $username = $fetch_user['username'];
+                                            ?>
+                                            <div class = "request">
+                                            <h4 style = "padding: 0; margin: 0;"><?php echo ucwords($username); ?></h4> has sent you a friend request!</h4>
+                                            <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept'>Accept</button>
+                                            <button class = "friendBtn ignore" data-uid='<?php echo $user2; ?>' data-type = 'ignore'>Ignore</button>
+                                            </div>
+                                            <?php
+                                            }
+                                        }else{
+                                            echo "No Requests!";
+                                        }
+                                    ?>
+                                    
+                                </div>
+                            </div>
                     </div>
                     
-                    <div class="col-md-6 ">
+                    <div class="col-md-8 ">
                             <div class="recommendusers">
                                 <div class="recommendheader">
                                     Recommended Users
@@ -255,7 +288,7 @@
                                                 <?php
                                                 $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
                                                                         SELECT game_id FROM user_games WHERE user_id = '".$id."' AND game_id IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."'))");
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$uid."'))");
                                                 $gamequery->execute();
                                                 ?>
                                                 
@@ -340,15 +373,25 @@
                                             <div>
                                                 <h4><?php echo $username; ?></h4>
                                                 <?php
-                                                $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
+                                                /*$query = $db->prepare("
+                                                    SELECT * FROM user WHERE user_id IN(
+                                                    SELECT user_id FROM user_games WHERE user_id != '".$uid."' AND game_id IN (
+                                                    SELECT game_id FROM user_games WHERE user_id = '".$uid."'))"
+                                                    );
+                                                $query->execute();*/
+                                                
+                                                $gamequery = $db->prepare("
+                                                                        SELECT * FROM game WHERE G_ID IN (
                                                                         SELECT game_id FROM user_games WHERE user_id = '".$id."' AND game_id IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."'))");
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$uid."'))"
+                                                                    );
                                                 $gamequery->execute();
                                                 ?>
                                                 
                                                 <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
                                                                     $sharedgame = $fetch['G_Name'];
-                                                                    echo $sharedgame;
+                                                                    echo "'".$sharedgame."' ";
+                                                                    
                                                                 }
                                                             ?>
                                                 </p>
@@ -403,7 +446,7 @@
                                                 <?php
                                                 $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
                                                                         SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."')");
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$uid."')");
                                                 $gamequery->execute();
                                                 ?>
                                                 
@@ -520,39 +563,27 @@
                             </div>
                     </div>
                     
-                    <div class="col-md-4">
-                        
-                        
-                    </div>
-                     
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="fixed-bottom">
-                            <div class="friendrequests">
-                                <div class="friendheader">
-                                    Friend Requests
-                                </div>
-                                <div class="friendbody">
-                                        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="fixed-bottom">
+                    <div class="col-md-2">
+                        <div class="col-md-4">
                             <div class="gamesbox">
                                 <div class="gamesheader">
                                     Your Games
+                                </div>
+                                <div class="gamesearch">
+                                    <form name="searchTest" method="post" action="searchresults.php" class="formsize">
+                                        <input name="search" type="text"/>
+                                        <input name="Submit" type="submit" value="search" class="submitsize"/>
+                                    </form>
                                 </div>
                                 <div class="gamesbody">
                                     
                                 </div>
                             </div>
-                        </div>
                     </div>
+                    </div>
+                     
                 </div>
+                
         </div>
         
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
