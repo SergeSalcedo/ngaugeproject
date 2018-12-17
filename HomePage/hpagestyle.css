@@ -13,6 +13,7 @@
 
 .recommendusers{
     position:relative;
+    left:120px;
     width:750px;
     margin-top: 20px;
     height:100%;
@@ -37,7 +38,7 @@
 }
 .recommendbody{
     position:absolute;
-    height:400px;
+    max-height:500px;
     margin-top:80px;
     width:750px;
     background-color:#e5eced;
@@ -138,7 +139,66 @@
 }
 
 .friendrequests{
-    height:300px;
-    width:200px;
-    background-color:#034452;
+    position:relative;
+    height:450px;
+    width:350px;
+    background-color:#e5eced;
+}
+
+.friendheader{
+    position:absolute;
+    height: 80px;
+    width:350px;
+    background-color:#ffffff;
+    border-style:solid;
+    border-color:#034452;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    line-height:75px;
+    font-family:arial;
+    font-size:20px;
+}
+
+.friendbody{
+    position:absolute;
+    max-height:500px;
+    margin-top:80px;
+    width:750px;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+    overflow-y:scroll;
+}
+
+.gamesbox{
+    position:relative;
+    float:right;
+    height:640px;
+    width:350px;
+    background-color:#e5eced;
+}
+
+.gamesheader{
+    position:absolute;
+    height: 80px;
+    width:350px;
+    background-color:#ffffff;
+    border-style:solid;
+    border-color:#034452;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    line-height:75px;
+    font-family:arial;
+    font-size:20px;
+}
+
+.gamesbody{
+    position:absolute;
+    max-height:500px;
+    margin-top:80px;
+    width:350px;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+    overflow-y:scroll;
 }

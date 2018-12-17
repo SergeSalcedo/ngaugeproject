@@ -254,13 +254,13 @@
                                                 <h4><?php echo $username; ?></h4>
                                                 <?php
                                                 $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$id."' AND game_id IN (
                                                                         SELECT game_id FROM user_games WHERE user_id = '".$currentuser."'))");
                                                 $gamequery->execute();
                                                 ?>
                                                 
                                                 <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
-                                                                    $sharedgame = $fetch['game_name'];
+                                                                    $sharedgame = $fetch['G_Name'];
                                                                     echo $sharedgame;
                                                                 }
                                                             ?>
@@ -341,13 +341,13 @@
                                                 <h4><?php echo $username; ?></h4>
                                                 <?php
                                                 $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."')");
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$id."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$currentuser."'))");
                                                 $gamequery->execute();
                                                 ?>
                                                 
                                                 <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
-                                                                    $sharedgame = $fetch['game_name'];
+                                                                    $sharedgame = $fetch['G_Name'];
                                                                     echo $sharedgame;
                                                                 }
                                                             ?>
@@ -522,26 +522,33 @@
                     
                     <div class="col-md-4">
                         
-                        <div class="profbuttonbody">
-                            <div class="profbutton" class="button1">
                         
-                            </div>
-                            <div class="profbutton">
-                        
-                            </div>
-                            <div class="profbutton">
-                        
-                            </div>
-                        </div>
                     </div>
                      
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-md-6">
                         <div class="fixed-bottom">
                             <div class="friendrequests">
+                                <div class="friendheader">
+                                    Friend Requests
+                                </div>
+                                <div class="friendbody">
+                                        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="fixed-bottom">
+                            <div class="gamesbox">
+                                <div class="gamesheader">
+                                    Your Games
+                                </div>
+                                <div class="gamesbody">
                                     
+                                </div>
                             </div>
                         </div>
                     </div>
