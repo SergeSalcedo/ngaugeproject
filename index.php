@@ -139,13 +139,13 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../HomePage/hpagestyle.css" />
     
     <head>
         <title>N-Gauge</title>
-        
         <style>
             .hidden{
                 display: none;
@@ -157,8 +157,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="searchbar">
-                    <div class="col-xs-12">
-                        <h2 class="imamargin">N-Gauge </h2>
+                    <div class="col-sm-12">
+                        <h2 class="imamargin">N-Gauge</h2>
+                        <div class="homepbutton">
+                            <button type="button" onclick="location.href='mypage.php'" class="btn btn-default btnhome">My Page</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -196,6 +199,7 @@
                                 <div class="friendbody">
                                     <div class="sidescroll">
                                         <?php 
+                                            require 'Classes/friends.php';
                                             $request = $db->prepare("SELECT * FROM friends WHERE user1 = '".$uid."' AND friendship_official='0'");
                                             $request->execute();
                                     
@@ -208,10 +212,11 @@
                         
                                                 $fetch_user = $user->fetch(PDO::FETCH_ASSOC);
                                                 $username = $fetch_user['username'];
+                                                
                                                 ?>
                                                 <div class = "request">
                                                 <h4 style = "padding: 0; margin: 0;"><?php echo ucwords($username); ?></h4> has sent you a friend request!</h4>
-                                                <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept'>Accept</button>
+                                                <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept' >Accept</button>
                                                 <button class = "friendBtn ignore" data-uid='<?php echo $user2; ?>' data-type = 'ignore'>Ignore</button>
                                                 </div>
                                                 <?php
@@ -248,7 +253,7 @@
                                         <h3>In your County:</h3>
                                         <?php
                                         
-                                        require 'Classes/friends.php';
+                                        //require 'Classes/friends.php';
                                         for($i = 0; $i<sizeof($recommendedusers1); $i++ ){
                                             $query = $db->prepare("SELECT * FROM user WHERE user_id = '".$recommendedusers1[$i]."'");
                                             $query->execute();
@@ -550,14 +555,46 @@
                                     Your Games
                                 </div>
                                 <div class="gamesearch">
-                                    <form name="searchTest" method="post" action="searchresults.php" class="formsize">
-                                        <input name="Search" type="text" class="searchentry"/>
-                                        <input name="Submit" type="submit" value="Search" class="submitbox"/>
+                                    <form name="search" method="post" action="index.php" class="formsize">
+                                        <input name="search" type="text" class="searchentry"/>
+                                        <input name="submit" type="submit" value="Search" class="submitbox"/>
                                     </form>
                                 </div>
                                 <div class="gamesbody">
                                     <?php
-                                        
+                                        require 'Classes/addgames.php';
+                                        $gamesearch = $db->prepare("SELECT * FROM game WHERE G_Name LIKE '%".$_POST['search']."%'");
+                                        $gamesearch->execute();
+    
+                                        if($gamesearch->rowCount() > 0){
+                                            while($fetch = $gamesearch->fetch(PDO::FETCH_ASSOC)){
+                                                $g_id = $fetch['G_ID'];
+                                                $gamename = $fetch['G_Name'];
+                                                ?>
+                                            <div>
+                                                <h4><?php echo $gamename; ?></h4>
+                                                <div class="actions">
+                                                    <?php
+                                                        if(addgames::renderPlayedGame($uid, $g_id, 'isGameAdded') == 0){
+                                                            ?>
+                                                                <button class='gameBtn addGame' data-gid = '<?php echo $g_id; ?>' data-type='addgame'>Add game</button>
+                                                                <button class = "game_added hidden" disabled>Game Added!</button>
+                                                            <?php
+                                                        }else{
+                                                            ?>
+                                                                <button class='gameBtn remove' data-gid='<?php echo $g_id; ?>' data-type = 'remove'>Remove</button>
+                                                                <button class='gameBtn addGame hidden' data-g_id = '<?php echo $g_id; ?>' data-type='addgame'>Add game</button>
+                                                                <button class = "game_added hidden" disabled>Game Added!</button>
+                                                            <?php 
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <?php
+                                        }
+                                        }else{
+                                            echo "No games found! error: 501";
+                                        }
                                     ?>
                                 </div>
                             </div>
@@ -566,10 +603,38 @@
                 
         </div>
         
+        <!--<script>
+            $(document).ready(function(){
+                $('#search_text').keyup(function(){
+                    var txt = $(this).val();
+                    if(txt != ''){
+                        
+                    }
+                    else{
+                        $('#result').html('');
+                        $.ajax({
+                            url:"searchresults.php",
+                            method:"post",
+                            data:{search:txt},
+                            dataType:"text",
+                            success:function(data){
+                                $('#result').html(data);
+                            }
+                        });
+                    }
+                });
+            });
+        </script>-->
+        
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src='js/friends.js'></script>
+        <script src='js/addgames.js'></script>
     </body>
+    <footer class="fixed-bottom">
+        <div class="iamfooter">
+            © Team Melon: Joshua Cassidy, Serge Salcedo, Gaile Orprecio, Ciaran Brady
+        </div>
+    </footer>
 </html>

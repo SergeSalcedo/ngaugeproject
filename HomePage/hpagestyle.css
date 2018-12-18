@@ -1,10 +1,24 @@
 .imamargin{
     margin-left:25px;
+    float:left;
 }
 
 .searchbar{
+    height:100%;
     background-color:#e5eced;
     width:100%;
+}
+
+.homepbutton{
+    display:inline;
+    float:right;
+}
+
+.btnhome{
+    margin:0;
+    margin-top:3px;
+    background-color:#034452;
+    color:white;
 }
 
 .welcomenote{
@@ -24,8 +38,8 @@
 }
 
 .recommendusers{
-    display:block;
     position:relative;
+    display:block;
     margin-top:20px;
     width:750px;
     height:640px;
@@ -198,6 +212,7 @@
 .gamesbox{
     margin-top:20px;
     margin-right:25px;
+    margin-bottom:20px;
     position:relative;
     float:right;
     height:640px;
@@ -259,4 +274,88 @@
     margin:0;
     width:75px;
     font-size:18px;
+}
+
+.myfriendbox{
+    margin-left:100px;
+    margin-top:20px;
+    position:relative;
+    display:block;
+    width:650px;
+    height:640px;
+    float:left;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+}
+
+.myfriendheader{
+    position:absolute;
+    height: 80px;
+    width:650px;
+    background-color:#ffffff;
+    border-style:solid;
+    border-color:#034452;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    line-height:75px;
+    font-family:arial;
+    font-size:20px;
+}
+
+.myfriendbody{
+    position:absolute;
+    height:560px;
+    margin-top:80px;
+    width:650px;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+    overflow-y:auto;
+}
+
+.mygamesbox{
+    margin-right:100px;
+    position:relative;
+    display:block;
+    margin-top:20px;
+    width:650px;
+    height:640px;
+    float:right;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+}
+
+.mygamesheader{
+    position:absolute;
+    height: 80px;
+    width:650px;
+    background-color:#ffffff;
+    border-style:solid;
+    border-color:#034452;
+    float:left;
+    text-align:center;
+    vertical-align:middle;
+    line-height:75px;
+    font-family:arial;
+    font-size:20px;
+}
+
+.mygamesbody{
+    position:absolute;
+    height:560px;
+    margin-top:80px;
+    width:650px;
+    background-color:#e5eced;
+    box-shadow:3px 3px 10px grey;
+    overflow-y:auto;
+}
+
+.iamfooter{
+    color:white;
+    font-size:16px;
+    height:50px;
+    display:block;
+    line-height:44px;
+    text-align:center;
+    background-color:#034452;
 }

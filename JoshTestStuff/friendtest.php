@@ -64,7 +64,7 @@
                                         ?>
                                         <div class = "request">
                                             <h4 style = "padding: 0; margin: 0;"><?php echo ucwords($username); ?></h4> has sent you a friend request!</h4>
-                                            <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept'>Accept</button>
+                                            <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept' ">Accept</button>
                                             <button class = "friendBtn ignore" data-uid='<?php echo $user2; ?>' data-type = 'ignore'>Ignore</button>
                                         </div>
                                         <?php

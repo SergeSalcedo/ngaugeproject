@@ -1,54 +1,34 @@
 <?php
-
-    $host ="127.0.0.1";
-        $user = "amaterixen";
-        $pass="";
-        $db = "ngauge";
-        $port = 3306;
-        
-        $connection = mysqli_connect($host,$user,$pass,$db,$port)or die(mysql_error());
+    $db = new PDO('mysql:host=127.0.0.1;dbname=ngauge', 'amaterixen', '');
     
-    include ("db_connector.php");
-    
-    $gamesearch = $db->prepare("SELECT * FROM game WHERE G_Name = '".$_POST['Search']."'");
+    $gamesearch = $db->prepare("SELECT * FROM game WHERE G_Name LIKE '%".$_POST['search']."%'");
     $gamesearch->execute();
     
-    
-    /*if(!isset($_POST['search']))
-    {
-        header("Location:index.php");
-        $query = "SELECT * FROM game WHERE G_Name LIKE '%".$_POST['search']."%'";
-        $result = mysqli_query($connection, $query);
-    
-        if(mysqli_num_rows($result)!= 0)
-        {
-        
-            $search_rs = mysql_fetch_assoc();
+    if($gamesearch->rowCount() > 0){
+        $output .= '<div class="table-responsive">
+                        <table class="table-responsive">
+                            <table class = "table table bordered">
+                                <tr>
+                                    <th>Game Name</th>
+                                    <th>Developer</th>
+                                    <th>Publisher</th>
+                                    <th>Genre</th>
+                                    <th>Release</th>
+                                </tr>';
+        while($fetch = $gamesearch->fetch(PDO::FETCH_ASSOC)){
+            $output .= '
+                <tr>
+                    <td>'.$row["G_Name"].'</td>
+                    <td>'.$row["G_Developer"].'</td>
+                    <td>'.$row["G_Publisher"].'</td>
+                    <td>'.$row["G_Genre"].'</td>
+                    <td>'.$row["G_Release"].'</td>
+                </tr>
+            ';
         }
+        echo $output;
     }
-    
-    
-    
-    //$search_sql = "SELECT * FROM game WHERE G_Name LIKE '%".$_POST['search']."%' OR description LIKE '%".$_POST['search']."%'";
-    //$query = mysqli_query($connection, $search_sql);
-    //$query = "SELECT * FROM game WHERE G_Name LIKE '%".$_POST['search']."%' OR description LIKE '%".$_POST['search']."%'";
-    
-    
+    else{
+        echo "Game not found!";
+    }
 ?>
-
-<p> Search results </p>
-<?php 
-    if(mysqli_num_rows($query)!=0)
-    {
-        do
-        {?>
-            <p><?php echo $search_rs['']; ?></p>
-        <?php
-        }
-            while($search_rs = mysqli_fetch_assoc($query));
-        }
-          else 
-        {
-           // echo "no results found";
-        }*/
-?> 
