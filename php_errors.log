@@ -126,3 +126,15 @@
 [15-Dec-2018 15:43:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/JoshTestStuff/login.php:0
 [15-Dec-2018 15:43:23 UTC] PHP   2. include() /home/ubuntu/workspace/JoshTestStuff/login.php:1
 [15-Dec-2018 15:43:23 UTC] PHP   3. mysqli_stmt_prepare() /home/ubuntu/workspace/JoshTestStuff/db_connector.php:80
+[18-Dec-2018 05:37:40 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[18-Dec-2018 05:37:40 UTC] PHP Stack trace:
+[18-Dec-2018 05:37:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[18-Dec-2018 05:37:40 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[18-Dec-2018 05:38:17 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[18-Dec-2018 05:38:17 UTC] PHP Stack trace:
+[18-Dec-2018 05:38:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[18-Dec-2018 05:38:17 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37
+[18-Dec-2018 05:38:50 UTC] PHP Warning:  mysqli_num_rows() expects parameter 1 to be mysqli_result, null given in /home/ubuntu/workspace/CiaranTestStuff/searchresults.php on line 37
+[18-Dec-2018 05:38:50 UTC] PHP Stack trace:
+[18-Dec-2018 05:38:50 UTC] PHP   1. {main}() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:0
+[18-Dec-2018 05:38:50 UTC] PHP   2. mysqli_num_rows() /home/ubuntu/workspace/CiaranTestStuff/searchresults.php:37

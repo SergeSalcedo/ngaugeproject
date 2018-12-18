@@ -154,15 +154,14 @@
     </head>
     
     <body>
-        <div class="searchbar">
-            <div class="container-fluid">
-                    <div class="col-md-12">
-                        <h2>N-Gauge </h2>
-                    </div>
-            </div>
-        </div>
-        
         <div class="container-fluid">
+            <div class="row">
+                <div class="searchbar">
+                    <div class="col-xs-12">
+                        <h2 class="imamargin">N-Gauge </h2>
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <?php if(isset($_SESSION['success'])): ?>
                 <div class = "error success"></div>
@@ -175,8 +174,8 @@
                 <?php endif ?>
                 
                 <?php if(isset($_SESSION['username'])): ?>
-                <div class="container-fluid">
-                    <p>Welcome, <strong><?php echo $currentuser ?></strong>!
+                <div class="welcomenote">
+                    <p class="imamargin">Welcome, <strong><?php echo $currentuser ?></strong>!
                     <a href = "index.php?logout='1'" method="post" class="button" name = "logout" style = "color: red;"> Logout</a></p>
                 </div>
                 <?php endif ?>
@@ -185,7 +184,8 @@
         
         <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-2">
+                    <div class="col-xs-3">
+                        <div class="leftsidemenus">
                         <div class="profimgbox">
                             <img src="NG.png" alt="NGauge Logo" class="img-thumbnail">
                         </div>
@@ -194,37 +194,39 @@
                                     Friend Requests
                                 </div>
                                 <div class="friendbody">
-                                    <?php 
-                                        $request = $db->prepare("SELECT * FROM friends WHERE user1 = '".$uid."' AND friendship_official='0'");
-                                        $request->execute();
-                                
-                                        if($request->rowCount() > 0){
-                                            while($fetch = $request->fetch(PDO::FETCH_ASSOC)){
-                                            $user2 = $fetch['user2'];
-                                        
-                                            $user = $db->prepare("SELECT * FROM user WHERE user_id = '".$user2."'");
-                                            $user->execute();
-                    
-                                            $fetch_user = $user->fetch(PDO::FETCH_ASSOC);
-                                            $username = $fetch_user['username'];
-                                            ?>
-                                            <div class = "request">
-                                            <h4 style = "padding: 0; margin: 0;"><?php echo ucwords($username); ?></h4> has sent you a friend request!</h4>
-                                            <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept'>Accept</button>
-                                            <button class = "friendBtn ignore" data-uid='<?php echo $user2; ?>' data-type = 'ignore'>Ignore</button>
-                                            </div>
-                                            <?php
-                                            }
-                                        }else{
-                                            echo "No Requests!";
-                                        }
-                                    ?>
+                                    <div class="sidescroll">
+                                        <?php 
+                                            $request = $db->prepare("SELECT * FROM friends WHERE user1 = '".$uid."' AND friendship_official='0'");
+                                            $request->execute();
                                     
+                                            if($request->rowCount() > 0){
+                                                while($fetch = $request->fetch(PDO::FETCH_ASSOC)){
+                                                $user2 = $fetch['user2'];
+                                            
+                                                $user = $db->prepare("SELECT * FROM user WHERE user_id = '".$user2."'");
+                                                $user->execute();
+                        
+                                                $fetch_user = $user->fetch(PDO::FETCH_ASSOC);
+                                                $username = $fetch_user['username'];
+                                                ?>
+                                                <div class = "request">
+                                                <h4 style = "padding: 0; margin: 0;"><?php echo ucwords($username); ?></h4> has sent you a friend request!</h4>
+                                                <button class = "friendBtn accept" data-uid='<?php echo $user2; ?>' data-type = 'accept'>Accept</button>
+                                                <button class = "friendBtn ignore" data-uid='<?php echo $user2; ?>' data-type = 'ignore'>Ignore</button>
+                                                </div>
+                                                <?php
+                                                }
+                                            }else{
+                                                echo "No Requests!";
+                                            }
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                     
-                    <div class="col-md-8 ">
+                    <div class="col-xs-5 mx-auto ">
                             <div class="recommendusers">
                                 <div class="recommendheader">
                                     Recommended Users
@@ -242,32 +244,7 @@
                                         <div class="recommendeduser">
                                             
                                         </div>
-                                        <!--Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Here is user </br>
-                                        Send Noods - Also stupid Chrome has bug with scrollbar >.< -->
+                                        
                                         <h3>In your County:</h3>
                                         <?php
                                         
@@ -294,7 +271,8 @@
                                                 
                                                 <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
                                                                     $sharedgame = $fetch['G_Name'];
-                                                                    echo $sharedgame;
+                                                                    echo "'".$sharedgame."' ";
+                                                                    
                                                                 }
                                                             ?>
                                                 </p>
@@ -444,15 +422,18 @@
                                             <div>
                                                 <h4><?php echo $username; ?></h4>
                                                 <?php
-                                                $gamequery = $db->prepare("SELECT G_Name FROM game WHERE G_ID IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$username."' AND game_id IN (
-                                                                        SELECT game_id FROM user_games WHERE user_id = '".$uid."')");
+                                                $gamequery = $db->prepare("
+                                                                        SELECT * FROM game WHERE G_ID IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$id."' AND game_id IN (
+                                                                        SELECT game_id FROM user_games WHERE user_id = '".$uid."'))"
+                                                                    );
                                                 $gamequery->execute();
                                                 ?>
                                                 
                                                 <p>Plays: <?php while($fetch = $gamequery->fetch(PDO::FETCH_ASSOC)){
-                                                                    $sharedgame = $fetch['game_name'];
-                                                                    echo $sharedgame;
+                                                                    $sharedgame = $fetch['G_Name'];
+                                                                    echo "'".$sharedgame."' ";
+                                                                    
                                                                 }
                                                             ?>
                                                 </p>
@@ -563,25 +544,24 @@
                             </div>
                     </div>
                     
-                    <div class="col-md-2">
-                        <div class="col-md-4">
+                    <div class="col-xs-4">
                             <div class="gamesbox">
                                 <div class="gamesheader">
                                     Your Games
                                 </div>
                                 <div class="gamesearch">
                                     <form name="searchTest" method="post" action="searchresults.php" class="formsize">
-                                        <input name="search" type="text"/>
-                                        <input name="Submit" type="submit" value="search" class="submitsize"/>
+                                        <input name="Search" type="text" class="searchentry"/>
+                                        <input name="Submit" type="submit" value="Search" class="submitbox"/>
                                     </form>
                                 </div>
                                 <div class="gamesbody">
-                                    
+                                    <?php
+                                        
+                                    ?>
                                 </div>
                             </div>
-                    </div>
-                    </div>
-                     
+                        </div>
                 </div>
                 
         </div>
@@ -589,6 +569,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
         <script src='js/friends.js'></script>
     </body>
 </html>
