@@ -64,6 +64,10 @@
                                             
                                         
                                         ?>
+                                    <p>
+                                        <!--<label>First Name</label>-->
+                                        <input type="text" name="discord" placeholder = "Discord username" />
+                                    </p>
                                     </p>
                                     <p>
                                         <!--<label>Password</label>-->

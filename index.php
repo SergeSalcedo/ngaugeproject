@@ -231,7 +231,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-xs-5 mx-auto ">
+                    <div class="col-xs-5 mx-auto">
                             <div class="recommendusers">
                                 <div class="recommendheader">
                                     Recommended Users

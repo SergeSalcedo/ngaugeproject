@@ -32,6 +32,9 @@
         if (empty($_POST['county'])){
             array_push($errors, "Last Name is required");
         }
+        if (empty($_POST['discord'])){
+            array_push($errors, "Discord is required");
+        }
         if (empty($_POST['pass1'])){
             array_push($errors, "Password is required");
         }
@@ -45,15 +48,15 @@
             $password = password_hash($password1, PASSWORD_DEFAULT);
             
             //Inserts user info into database
-            $sql = "INSERT INTO user (username, email, Fname, Lname, password, user_county) 
-                VALUES (?, ?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO user (username, email, Fname, Lname, password, user_county, user_discord) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)";
                 
                 $stmt = mysqli_stmt_init($connection);
                 if(!mysqli_stmt_prepare($stmt, $sql)){
                     echo "SQL Error";
                 }
                 else{
-                    mysqli_stmt_bind_param($stmt, "ssssss", $_POST['user'], $_POST['email'], $_POST['fname'], $_POST['lname'], (password_hash($_POST['pass1'], PASSWORD_DEFAULT)), $_POST['county']);
+                    mysqli_stmt_bind_param($stmt, "sssssss", $_POST['user'], $_POST['email'], $_POST['fname'], $_POST['lname'], (password_hash($_POST['pass1'], PASSWORD_DEFAULT)), $_POST['county'], $_POST['discord']);
                     mysqli_stmt_execute($stmt);
                     
                     //session_start();
